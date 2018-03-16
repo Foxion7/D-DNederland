@@ -1,0 +1,313 @@
+html {
+    height: 100%;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    min-height: 100%;
+    font-family: Arial, Serif;
+    background-color: lightgrey;
+}
+
+/* Navbar & sidenav aka responsiveness */
+.navbar{
+    background-color: darkred;
+    overflow: hidden;
+    height: 63px;
+}
+
+.navbar a{
+    float:left;
+    display:block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar ul {
+    margin: 8px 0 0 0;
+    list-style: none;
+}
+
+.navbar a:hover{
+    background-color: red;
+}
+
+.side-nav{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: darkred;
+    opacity: 0.9;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.3s;
+}
+
+.side-nav a {
+    padding: 10px 10px 10px 30px;
+    text-decoration: none;
+    font-size: 22px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.side-nav a:hover {
+    color: #fff;
+}
+
+.side-nav .btn-close{
+    position: absolute;
+    top:0;
+    right: 22px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Footer */
+.footer {
+    position: absolute;
+    bottom: -40px;
+    height: 40px;
+    width: 100%;
+
+    background-color: darkred;
+}
+
+.footer-text {
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#main{
+    position: relative;
+    transition: margin-left 0.3s;
+    overflow: hidden;
+    padding: 10px 10px 10px 10px;
+}
+
+@media(max-width:567px){
+    .navbar-nav{display:none}
+}
+
+@media(min-width:568px){
+    .open-slide{display:none}
+}
+
+/* Banner & Logo*/
+.imageparent{
+    top: 0;
+    left: 0;
+}
+
+img.banner{
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+img.logo{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    max-width: 30%;
+    width: auto;
+    height: auto;
+}
+
+/* Spinner & curtains */
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+#loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    -webkit-animation: spin 3.35s;
+    animation: spin 3.35s;
+    z-index: 1001;
+}
+
+#loader:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    -webkit-animation: spin 3.35s;
+    animation: spin 3.35s;
+    z-index: 1001;
+}
+
+@-webkit-keyframes spin {
+    0%   {
+        border-top-color: #f9c922;
+        -webkit-transform: scale(1,1);
+        -ms-transform: scale(1,1);
+        transform: scale(1,1);
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+
+    }
+    50%{
+        border-top-color: darkslateblue;
+        -webkit-transform: scale(2,2);
+        -ms-transform: scale(2,2);
+        transform: scale(2,2);
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+    100% {
+        border-top-color: #f9c922;
+        -webkit-transform: scale(0.5, 0.5);
+        -ms-transform: scale(0.5, 0.5);
+        transform: scale(0.5, 0.5);
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+@keyframes spin {
+    0%   {
+        border-top-color: #f9c922;
+        -webkit-transform: scale(1,1);
+        -ms-transform: scale(1,1);
+        transform: scale(1,1);
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    50%{
+        border-top-color: darkslateblue;
+        -webkit-transform: scale(2,2);
+        -ms-transform: scale(2,2);
+        transform: scale(2,2);
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+    100% {
+        border-top-color: #f9c922;
+        -webkit-transform: scale(0.5, 0.5);
+        -ms-transform: scale(0.5, 0.5);
+        transform: scale(0.5, 0.5);
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+
+#loader-wrapper .loader-section{
+    position: fixed;
+    top: 0;
+    width: 51%;
+    height: 100%;
+    background: darkred;
+    z-index: 1000;
+}
+
+#loader-wrapper .loader-section.section-left{
+    left: 0;
+}
+
+#loader-wrapper .loader-section.section-right{
+    right: 0;
+}
+
+.loaded #loader-wrapper .loader-section.section-left{
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+
+    -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.loaded #loader-wrapper .loader-section.section-right{
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
+
+    -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.loaded #loader{
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.loaded #loader-wrapper{
+    visibility: hidden;
+
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+
+    -webkit-transition: all 0.3s 1s ease-out;
+    transition: all 0.3s 1s ease-out;
+}
+
+/* Notification */
+
+#widget{
+    z-index: 1001;
+    position: absolute;
+}
+
+#notification{
+    display: none;
+    position: fixed;
+    width: 200px;
+    height: 100px;
+    right: 10px;
+    bottom: 10px;
+    background-color: lightblue;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+#notification-text{
+    padding: 10px;
+}
+
+#notification-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#notification-close{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 5px;
+    top: 5px;
+}
